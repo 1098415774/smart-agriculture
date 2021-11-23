@@ -4,3 +4,11 @@ spring:
     userName: root
     password: 11111
     driver-class-name: 'com.mysql.cj.jdbc.Driver'
+mqtt:
+  url: tcp://127.0.0.1:61613
+  clientId: TEST_CLIENT
+  topic: service/#
+  username: admin
+  password: password
+
+

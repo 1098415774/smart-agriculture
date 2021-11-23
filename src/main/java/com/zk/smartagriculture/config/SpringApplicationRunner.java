@@ -9,6 +9,5 @@ public class SpringApplicationRunner implements ApplicationRunner {
     
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        new Thread(new SocketServer()).start();    
     }
 }

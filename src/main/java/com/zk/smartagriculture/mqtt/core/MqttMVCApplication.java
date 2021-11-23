@@ -44,7 +44,7 @@ public class MqttMVCApplication extends MyAbstractMqttMessageHandler implements 
     private JsonPackagingHandler jsonPackagingHandler;
 
 
-    MqttMVCApplication(){
+    public MqttMVCApplication(){
         threadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(20);
     }
 
