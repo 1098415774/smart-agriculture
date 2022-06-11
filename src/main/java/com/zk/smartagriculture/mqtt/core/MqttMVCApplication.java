@@ -28,7 +28,7 @@ public class MqttMVCApplication extends MyAbstractMqttMessageHandler implements 
     private ThreadPoolExecutor threadPoolExecutor;
 
     private String typeAliasesPackage;
-    
+
     private ClassLoader classloader;
 
     private String prefixtopic = "";

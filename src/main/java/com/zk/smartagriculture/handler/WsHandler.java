@@ -53,6 +53,5 @@ public class WsHandler extends BinaryWebSocketHandler {
                 e.printStackTrace();
             }
         }
-
     }
 }

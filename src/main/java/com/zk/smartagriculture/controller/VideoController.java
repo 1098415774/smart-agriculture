@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("video")
+@RequestMapping("rtsp")
 public class VideoController {
     @Autowired
     private WsHandler wsHandler;

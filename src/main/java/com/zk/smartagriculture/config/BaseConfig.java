@@ -15,7 +15,7 @@ import org.springframework.integration.mqtt.inbound.MqttPahoMessageDrivenChannel
 import org.springframework.integration.mqtt.outbound.MqttPahoMessageHandler;
 import org.springframework.messaging.MessageChannel;
 
-@Configuration
+//@Configuration
 public class BaseConfig {
     @Value("${mqtt.url}")
     private String mqttUrl;
