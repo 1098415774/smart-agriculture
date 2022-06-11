@@ -1,0 +1,1 @@
+ffmpeg -f dshow -i video="BisonCam, NB Pro" -vcodec libx264 -preset:v ultrafast -tune:v zerolatency -f mpegts -codec:v mpeg1video -s 800x600 http://127.0.0.1:8080/rtsp/receive
