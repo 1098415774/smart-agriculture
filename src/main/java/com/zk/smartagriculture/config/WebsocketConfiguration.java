@@ -29,7 +29,8 @@ public class WebsocketConfiguration implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
-        webSocketHandlerRegistry.addHandler(wsHandler,"/rtsp").addInterceptors(wsIntercept).setAllowedOrigins("*");
+        webSocketHandlerRegistry.addHandler(wsHandler,"/receive").addInterceptors(wsIntercept).setAllowedOrigins("*");
+        webSocketHandlerRegistry.addHandler(wsHandler,"/receive2").addInterceptors(wsIntercept).setAllowedOrigins("*");
     }
 
     @Bean

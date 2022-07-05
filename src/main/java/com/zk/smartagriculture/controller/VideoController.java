@@ -23,7 +23,25 @@ public class VideoController {
             while ((len =inputStream.available()) !=-1) {
                 byte[] data = new byte[len];
                 inputStream.read(data);
-                wsHandler.sendVideo(data);
+                wsHandler.sendVideo(data,"receive");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "success";
+    }
+
+    @RequestMapping("receive2")
+    public String receive2(HttpServletRequest request){
+
+        try {
+            ServletInputStream inputStream = request.getInputStream();
+            int len = -1;
+            while ((len =inputStream.available()) !=-1) {
+                byte[] data = new byte[len];
+                inputStream.read(data);
+                wsHandler.sendVideo(data,"receive2");
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -27,6 +27,7 @@ public class WsHandler extends BinaryWebSocketHandler {
     private FFmpegFrameGrabber grabber = new FFmpegFrameGrabber(inputStream);
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+        System.out.println("URL:" + session.getUri());
         System.out.println("新的加入");
         clients.put(session.getId(), session);
     }
@@ -41,13 +42,17 @@ public class WsHandler extends BinaryWebSocketHandler {
         clients.remove(session.getId());
     }
 
-    public void sendVideo(byte[] data) {
+    public void sendVideo(byte[] data,String pathKey) {
         BinaryMessage binaryMessage = new BinaryMessage(data);
         for (Map.Entry<String, WebSocketSession> sessionEntry : clients.entrySet()) {
             try {
                 WebSocketSession session = sessionEntry.getValue();
                 if (session.isOpen()) {
-                    session.sendMessage(binaryMessage);
+                    String path = session.getUri().getPath();
+                    String key = path.substring(path.lastIndexOf("/")+1);
+                    if (key.equals(pathKey)){
+                        session.sendMessage(binaryMessage);
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
